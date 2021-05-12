@@ -22,6 +22,7 @@ body {
     width: 30.625rem;
     display: flex;
     flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .grid div {
@@ -41,6 +42,7 @@ body {
 
 h3 {
     margin: 1.25rem;
+    margin-bottom: 1rem;
 }
 
 .heading {
