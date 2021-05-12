@@ -9,6 +9,7 @@ body {
     text-align: center;
     /* overflow: hidden; */
     padding: relative;
+    transition: all 0.4s ease-in-out;
 }
 
 .toggler {
@@ -19,24 +20,22 @@ body {
 
 .far {
     color: whitesmoke;
+    transition: all 0.4s ease-in-out;
 }
 
 .fas {
     color: #444;
+    transition: all 0.4s ease-in-out;
 }
 
 a {
     text-decoration: none;
 }
 
-/* .light-mode {
-    background-color: antiquewhite;
-} */
-
 .dark-mode {
     background-color: #444;
     color: whitesmoke;
-    border: yellow;
+    transition: all 0.4s ease-in-out;
 }
 
 .grid {
