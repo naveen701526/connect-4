@@ -6,11 +6,47 @@
 
 body {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     text-align: center;
     overflow: hidden;
+    padding: relative;
+}
+
+.grid {
+    border: 1px solid;
+    height: 26.25rem;
+    width: 30.625rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid div {
+    height: 4.375rem;
+    width: 4.375rem;
+}
+
+.player-one {
+    background-color: red;
+    border-radius: 50%;
+}
+
+.player-two {
+    background-color: blue;
+    border-radius: 50%;
+}
+
+h3 {
+    margin: 1.25rem;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 2rem;
 }
