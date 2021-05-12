@@ -7,7 +7,7 @@ body {
     height: 100vh;
     margin: 0;
     text-align: center;
-    /* overflow: hidden; */
+
     padding: relative;
     transition: all 0.4s ease-in-out;
 }
