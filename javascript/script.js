@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = document.querySelector('#result');
     const displayCurrentPlayer = document.querySelector('#current-player');
     let currentPlayer = 1;
+    let darks;
+    if (localStorage.getItem('dark') !== null) {
+        document.body.classList.add('dark-mode');
+        darks = localStorage.getItem('dark');
+        document.querySelector('.fa-circle').classList.add('far');
+        document.querySelector('.fa-circle').classList.remove('fas');
+    }
 
     const winningArrays = [
         [0, 1, 2, 3],
@@ -90,10 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 square3.classList.contains('player-one') &&
                 square4.classList.contains('player-one')
             ) {
-                result.innerHTML = `Player One Wins! <br> New Game will Start in 5 Seconds `;
+                result.innerHTML = `Player One Wins! <br> New Game will Start in 10 Seconds `;
                 setTimeout(() => {
                     location.reload();
-                }, 5000);
+                }, 10000);
             }
             //check those squares to see if they all have the class of player-two
             if (
@@ -102,10 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 square3.classList.contains('player-two') &&
                 square4.classList.contains('player-two')
             ) {
-                result.innerHTML = `Player Two Wins! <br> New Game will Start in 5 Seconds `;
+                result.innerHTML = `Player Two Wins! <br> New Game will Start in 10 Seconds `;
                 setTimeout(() => {
                     location.reload();
-                }, 5000);
+                }, 10000);
             }
         }
     }
@@ -139,16 +146,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const dark = document.querySelector('.dark');
-const light = document.querySelector('light');
 dark.addEventListener('click', () => {
     console.log('hi');
     document.body.classList.toggle('dark-mode');
     if (document.body.classList.contains('dark-mode')) {
         document.querySelector('.fa-circle').classList.add('far');
         document.querySelector('.fa-circle').classList.remove('fas');
-        // console.log(document.querySelector('.fa-circle').classList);
+
+        localStorage.setItem('dark', 'far');
     } else if (!document.body.classList.contains('dark-mode')) {
         document.querySelector('.fa-circle').classList.add('fas');
         document.querySelector('.fa-circle').classList.remove('far');
+        localStorage.removeItem('dark');
     }
 });
