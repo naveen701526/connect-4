@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 square3.classList.contains('player-one') &&
                 square4.classList.contains('player-one')
             ) {
-                result.innerHTML = `Player One Wins! <br> New Game will Start in 10 Seconds `;
+                result.innerHTML = `Player One (Red Colour) Wins! <br> New Game will Start in 10 Seconds `;
                 setTimeout(() => {
                     location.reload();
                 }, 10000);
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 square3.classList.contains('player-two') &&
                 square4.classList.contains('player-two')
             ) {
-                result.innerHTML = `Player Two Wins! <br> New Game will Start in 10 Seconds `;
+                result.innerHTML = `Player Two (Blue Colour) Wins! <br> New Game will Start in 10 Seconds `;
                 setTimeout(() => {
                     location.reload();
                 }, 10000);
@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 squares[i + 7].classList.contains('taken') &&
                 !squares[i].classList.contains('taken')
             ) {
-                console.log('you guys');
                 if (currentPlayer == 1) {
                     squares[i].classList.add('taken');
                     squares[i].classList.add('player-one');
@@ -139,7 +138,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     displayCurrentPlayer.innerHTML = currentPlayer;
                     displayCurrentPlayer.style.color = 'red';
                 }
-            } else alert('cant go here');
+            } else {
+                const div = document.createElement('div');
+                div.className = 'show-error';
+                div.appendChild(
+                    document.createTextNode('It is an invalid move')
+                );
+                console.log(div);
+                document.body.appendChild(div);
+                setTimeout(() => {
+                    div.style.display = 'none';
+                }, 1000);
+            }
             checkBoard();
         };
     }
