@@ -74,26 +74,32 @@ document.addEventListener('DOMContentLoaded', () => {
         [11, 18, 25, 32],
         [12, 19, 26, 33],
         [13, 20, 27, 34],
-    ]
+    ];
 
     for (let i = 0; i < squares.length; i++) {
         squares[i].onclick = () => {
             //if the square below your current square is taken, you can go ontop of it
-            console.log('hello');
-            if (squares[i + 7].classList.contains('taken') && !squares[i].classList.contains('taken')) {
+
+            if (
+                squares[i + 7].classList.contains('taken') &&
+                !squares[i].classList.contains('taken')
+            ) {
+                console.log('you guys');
                 if (currentPlayer == 1) {
                     squares[i].classList.add('taken');
                     squares[i].classList.add('player-one');
                     currentPlayer = 2;
                     displayCurrentPlayer.innerHTML = currentPlayer;
+                    displayCurrentPlayer.style.color = 'blue';
                 } else if (currentPlayer == 2) {
                     squares[i].classList.add('taken');
                     squares[i].classList.add('player-two');
                     currentPlayer = 1;
                     displayCurrentPlayer.innerHTML = currentPlayer;
+                    displayCurrentPlayer.style.color = 'red';
                 }
             } else alert('cant go here');
-            // checkBoard();
+            checkBoard();
         };
     }
 });

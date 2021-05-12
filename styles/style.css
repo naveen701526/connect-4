@@ -1,18 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
 
-* {
-    box-sizing: border-box;
-}
-
 body {
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
     text-align: center;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: relative;
 }
 
@@ -51,4 +46,20 @@ h3 {
     position: absolute;
     top: 0;
     left: 2rem;
+}
+
+@media (max-width: 412px) {
+    .grid {
+        border: 1px solid;
+        height: 210px;
+        width: 245px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .grid div {
+        height: 35px;
+        width: 35px;
+    }
 }
